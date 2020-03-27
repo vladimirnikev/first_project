@@ -4,7 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <!-- Подключи шрифты -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
+        integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
     <title>Hungry People</title>
 </head>
 
@@ -13,40 +16,83 @@
         <div class="container">
             <nav class="nav">
                 <ul>
-                    <li>Home</li>
-                    <li>About</li>
-                    <li>Team</li>
-                    <li>Booking</li>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Team</a></li>
+                    <li><a href="#">Booking</a></li>
                 </ul>
-            </nav>
-            <nav class="nav">
                 <ul>
-                    <li>Menu</li>
-                    <li>Galerie</li>
-                    <li>Events</li>
-                    <li>Contact</li>
+                    <li><a href="#">Menu</a></li>
+                    <li><a href="#">Galerie</a></li>
+                    <li><a href="#">Events</a></li>
+                    <li><a href="#">Contact</a></li>
                 </ul>
             </nav>
-        </div>
-        <img src="/img/logo.svg" alt="" class="logo">
-        <div class="header__wrapper">
-            <span class="work-time">Mon - Fri: 8PM - 10PM, Sat - Sun: 8PM - 3AM</span>
-            <div class="header__content">
-                <h4 class="header__sub-title">Restaurant</h4>
-                <h2 class="header__title">hungry people</h2>
-                <div class="header__btn-wrapper">
-                    <button class="header__btn">Book Table</button>
-                    <button class="header__btn">Explore</button>
+
+            <img src="img/logo.svg" alt="" class="logo">
+            <div class="header__wrapper">
+                <span class="work-time">Mon - Fri: 8PM - 10PM, Sat - Sun: 8PM - 3AM</span>
+                <div class="header__content">
+                    <h4 class="header__sub-title sub-title">Restaurant</h4>
+                    <h2 class="header__name">hungry people</h2>
+                    <div class="header__btn-wrapper">
+                        <button class="header__btn btn">Book Table</button>
+                        <button class="header__btn btn">Explore</button>
+                    </div>
+                </div>
+                <div class="header__btn-down">
+                    <button>
+                        <a href="#"><i class="fas fa-angle-down"></i></a>
+                    </button>
                 </div>
             </div>
-            <header__btn></header__btn>
-        </div>
-        <div class="header__link-list">
-            <div class="link-wrapper"><img src="img/facebook-link.svg" alt=""></div>
-            <div class="link-wrapper"><img src="img/twitter-link.svg" alt=""></div>
-            <div class="link-wrapper"><img src="img/instagram-link.svg" alt=""></div>
+            <div class="header__link-list">
+                <div class="header__link-wrapper"><a href="#"><img src="img/facebook-link.svg" alt=""></a></div>
+                <div class="header__link-wrapper"><a href="#"><img src="img/twitter-link.svg" alt=""></a></div>
+                <div class="header__link-wrapper"><a href="#"><img src="img/instagram-link.svg" alt=""></a></div>
+            </div>
         </div>
     </header>
+    <section class="about">
+        <div class="container">
+            <div class="section__wrapper">
+                <div class="section__text-wrapper">
+                    <h3 class="title title_black">About Us</h3>
+                    <p class="content-text content-text_black">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Duis at velit
+                        maximus,
+                        molestie est a, tempor magna.</p>
+                    <p class="sub-text sub-text_black">Integer ullamcorper neque eu purus euismod, ac faucibus mauris
+                        posuere. Morbi
+                        non
+                        ultrices ligula. Sed dictum, enim sed ullamcorper feugiat, dui odio vehicula eros, a
+                        sollicitudin
+                        lorem quam nec sem. Mauris tincidunt feugiat diam convallis pharetra. Nulla facilisis semper
+                        laoreet.</p>
+                </div>
+                <img src="img/about-img.png" alt="" class="section__img">
+            </div>
+        </div>
+    </section>
+    <section class="team">
+        <div class="container">
+            <h4 class="sub-title">Our Team</h4>
+            <div class="section__wrapper">
+                <img src="img/team.png" alt="" class="section__img">
+                <div class="section__text-wrapper">
+                    <h3 class="title title_white">MASTER CHEF</h3>
+                    <p class="content-text content-text_white">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Duis at velit
+                        maximus, molestie est a, tempor magna.</p>
+                    <p class="sub-text sub-text_white">Integer ullamcorper neque eu purus euismod, ac faucibus mauris
+                        posuere. Morbi
+                        non ultrices ligula. Sed dictum, enim sed ullamcorper feugiat, dui odio vehicula eros, a
+                        sollicitudin lorem quam nec sem. Mauris tincidunt feugiat diam convallis pharetra. Nulla
+                        facilisis semper laoreet.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 </body>
 
 </html>
