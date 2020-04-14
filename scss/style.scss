@@ -12,11 +12,19 @@
     content: '';
     position: absolute;
     border: 20px solid #E8C300;
-    // width: 250px;
-    // height: 250px;
     border-radius: 5px;
     box-shadow: 0px 0px 100px rgba(65, 10, 10, 0.5);
     display: block;
+}
+
+// Стили для вертикальных линий
+%lines {
+    content: '';
+    display: block;
+    width: 1px;
+    background: rgba(255, 255, 255, 0.2);
+    position: absolute;
+    transform: translate(-50%);
 }
 
 // Шрифт1
@@ -38,10 +46,10 @@ $color-sub-text: rgba(255, 255, 255, 0.5);
 
 // Кнопки
 .btn {
-    background: none;
-    border: 1px solid rgba(255, 255, 255, 0.5);
     border-radius: 5px;
     width: 200px;
+    border: none;
+    background-color: #E8C300;
 
     a {
         display: block;
@@ -55,17 +63,8 @@ $color-sub-text: rgba(255, 255, 255, 0.5);
 }
 
 .btn:hover {
-    background: #E8C300;
-    transition: 0.8s;
-}
-
-.sub-title {
-    font: bold 12px $font-stack2;
-    line-height: 14px;
-    color: #ffffff;
-    letter-spacing: 0.5em;
-    text-transform: uppercase;
-    position: relative;
+    background-color: #ffd500;
+    transition: 0.2s;
 }
 
 // Повторяющийся текст
@@ -81,7 +80,40 @@ $color-sub-text: rgba(255, 255, 255, 0.5);
     color: #FFFFFF;
 }
 
+.sub-title {
+    font: bold 12px $font-stack2;
+    line-height: 14px;
+    color: #ffffff;
+    letter-spacing: 0.5em;
+    text-transform: uppercase;
+    position: relative;
+}
 
+.work-time {
+    font: bold 12px $font-stack2;
+    line-height: 12px;
+    text-align: center;
+}
+
+// Линии
+.team::before,
+.team::after,
+.specialties::before,
+.specialties::after {
+    @extend %lines;
+    height: 100%;
+    top: 0;
+}
+
+.team::before,
+.specialties::before {
+    left: 295px;
+}
+
+.team::after,
+.specialties::after {
+    right: 295px;
+}
 
 
 /* Header */
@@ -135,9 +167,6 @@ $color-sub-text: rgba(255, 255, 255, 0.5);
         .work-time_wrapper {
 
             .work-time {
-                font: bold 12px $font-stack2;
-                line-height: 12px;
-                text-align: center;
                 color: #ffffff;
                 transform: rotate(-90deg);
                 margin-left: -99px;
@@ -156,14 +185,6 @@ $color-sub-text: rgba(255, 255, 255, 0.5);
             margin-left: -95px;
             padding: 225px 40px 83px;
             position: relative;
-
-            // .header__sub-title {
-            //     font: bold 12px $font-stack2;
-            //     line-height: 14px;
-            //     color: #ffffff;
-            //     letter-spacing: 0.5em;
-            //     text-transform: uppercase;
-            // }
 
             .header__name {
                 font: 96px $font-stack1;
@@ -189,12 +210,19 @@ $color-sub-text: rgba(255, 255, 255, 0.5);
                 margin-top: 30px;
                 padding-bottom: 82px;
 
-                .header__btn {
+                .btn {
                     margin-left: 40px;
+                    background: none;
+                    border: 1px solid rgba(255, 255, 255, 0.5);
                 }
 
-                .header__btn:first-of-type {
+                .btn:first-of-type {
                     margin-left: 0px;
+                }
+
+                .btn:hover {
+                    background: #E8C300;
+                    transition: 0.8s;
                 }
             }
 
@@ -203,7 +231,6 @@ $color-sub-text: rgba(255, 255, 255, 0.5);
                 border-radius: 50%;
                 padding: 9px;
                 background: none;
-
 
                 .header__btn-down_wrapper {
                     border-radius: 50%;
@@ -342,29 +369,22 @@ $color-sub-text: rgba(255, 255, 255, 0.5);
 
 /* Team */
 
-
-
 .team {
     background-image: url(../img/team-bg.png);
     background-size: cover;
     padding-bottom: 100px;
+    position: relative;
+
+    .container::before {
+        @extend %lines;
+        height: 100%;
+        left: 50%;
+    }
 
     .sub-title {
         padding: 40px 0;
         text-align: center;
 
-    }
-
-    .sub-title::before {
-        content: '';
-        display: block;
-        height: 669px;
-        width: 1px;
-        background: rgba(255, 255, 255, 0.2);
-        position: absolute;
-        left: 50%;
-        top: 0;
-        transform: translate(-50%);
     }
 
     .section__wrapper {
@@ -385,23 +405,210 @@ $color-sub-text: rgba(255, 255, 255, 0.5);
             padding-right: 20px;
         }
     }
+}
 
-    .section__wrapper::before,
-    .section__wrapper::after {
-        content: '';
+/* Book */
+
+.book {
+
+    .section__wrapper {
+        justify-content: flex-start;
+
+        .section__text-wrapper {
+            margin-left: 60px;
+
+            .section__form-wrapper {
+                display: flex;
+                padding-bottom: 10px;
+
+                .section__form {
+                    display: flex;
+                    flex-direction: column;
+
+                    input {
+                        margin-top: 10px;
+                        background: #E5E5E5;
+                        border-radius: 5px;
+                        width: 277px;
+                        padding: 20px 0;
+                        border: none;
+                        font: 14px $font-stack2;
+                        line-height: 19px;
+                        color: rgba(51, 51, 51, 0.5);
+                        text-indent: 20px;
+                    }
+
+                    .input-select {
+                        background-image: url(../img/input-down.svg);
+                        background-repeat: no-repeat;
+                        background-position: 90% 50%;
+                    }
+                }
+
+                .section__form:last-of-type {
+                    margin-left: 10px;
+                }
+            }
+
+            .section__btn {
+                width: 100%;
+            }
+        }
+
+        figure {
+            margin-left: 70px;
+        }
+    }
+
+    .work-time {
+        text-align: center;
         display: block;
-        height: 670px;
-        width: 1px;
-        background: rgba(255, 255, 255, 0.2);
-        position: absolute;
-        transform: translate(-50%);
+        padding: 45px 0;
+    }
+}
+
+/* Specialties */
+
+.specialties {
+    background-image: url(../img/specialties-bg.png);
+    background-size: cover;
+    padding-bottom: 45px;
+    position: relative;
+
+    .container::before {
+        @extend %lines;
+        height: 100%;
+        left: 50%;
     }
 
-    .section__wrapper::before {
-        left: 215px;
+    .sub-title {
+        text-align: center;
+        padding: 40px 0;
     }
 
-    .section__wrapper::after {
-        right: 215px;
+    .section__wrapper {
+        margin-top: 0px;
+        justify-content: flex-end;
+        position: relative;
+
+        .section__text-wrapper {
+            padding-right: 20px;
+        }
+
+        figure {
+            padding-right: 60px;
+            margin-left: 0px;
+        }
+
+        figure::after {
+            left: 0;
+        }
+    }
+
+    .carousel {
+        text-align: center;
+        margin-top: 45px;
+
+        .btn_carousel {
+            margin-left: 20px;
+            width: 10px;
+            height: 10px;
+            background: rgba(255, 255, 255, 0.5);
+            border: none;
+            border-radius: 50%;
+            padding: 0;
+        }
+
+        .btn_carousel:first-of-type {
+            margin-left: 0px;
+        }
+
+        .btn_carousel:hover {
+            background: #ffffff;
+        }
+    }
+}
+
+/* Kitchen Menu */
+
+.kitchen-menu {
+    padding-bottom: 100px;
+
+    .section__wrapper {
+        justify-content: center;
+
+        .section__text-wrapper {
+            width: 100%;
+            max-width: 100%;
+
+            .section__title {
+                padding-bottom: 30px;
+            }
+
+            .content-text {
+                max-width: 565px;
+                padding-bottom: 50px;
+            }
+
+            .kitchen-menu__categories {
+                display: flex;
+
+                li {
+                    display: block;
+                    padding: 16px 0px;
+                    text-align: center;
+                    font: bold 12px $font-stack2;
+                    line-height: 18px;
+                    text-transform: uppercase;
+                    min-width: 120px;
+                    border-right: 1px solid rgba(51, 51, 51, 0.2);
+                }
+
+                li:last-of-type {
+                    border: none;
+                }
+
+                li:hover {
+                    cursor: pointer;
+                    background-color: #e4e4e4;
+                    transition: 0.3s;
+                }
+            }
+
+            .kitchen-menu__list-wrapper {
+                display: flex;
+                justify-content: space-between;
+                margin-top: 50px;
+                width: 100%;
+
+                .kitchen-menu__list {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+
+                    .kitchen-menu__item {
+                        padding-bottom: 30px;
+                        display: flex;
+                        flex-wrap: wrap;
+
+
+                        .item__title,
+                        .item__price {
+                            font: 18px $font-stack1;
+                            line-height: 18px;
+                        }
+
+                        .item__price {
+                            margin-left: 15px;
+                        }
+
+                        .item__text {
+                            font: 12px $font-stack2;
+                            color: rgba(51, 51, 51, 0.5);
+                        }
+                    }
+                }
+            }
+        }
     }
 }
