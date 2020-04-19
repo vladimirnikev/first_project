@@ -1,0 +1,23 @@
+@font-face {
+  font-family: 'Banny';
+  font-style: normal;
+  font-weight: normal;
+  src: local("Banny Round"), url("../fonts/Banny-Round.woff") format("woff"); }
+
+.btn {
+  border-radius: 5px;
+  width: 200px;
+  border: none;
+  background-color: #E8C300; }
+  .btn a {
+    display: block;
+    padding: 20px;
+    text-decoration: none;
+    font: bold 12px "Open Sans", sans-serif;
+    line-height: 12px;
+    color: #FFFFFF;
+    text-transform: uppercase; }
+
+.btn:hover {
+  background-color: #ffd500;
+  transition: 0.2s; }

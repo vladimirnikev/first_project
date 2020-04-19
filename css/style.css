@@ -330,29 +330,11 @@ textarea {
   font-weight: normal;
   src: local("Banny Round"), url("../fonts/Banny-Round.woff") format("woff"); }
 
-.section__wrapper figure::after {
-  content: '';
-  position: absolute;
-  border: 20px solid #E8C300;
-  border-radius: 5px;
-  box-shadow: 0px 0px 100px rgba(65, 10, 10, 0.5);
-  display: block; }
-
-.team::before,
-.team::after,
-.specialties::before,
-.specialties::after, .team .container::before, .specialties .container::before {
-  content: '';
-  display: block;
-  width: 1px;
-  background: rgba(255, 255, 255, 0.2);
-  position: absolute;
-  transform: translate(-50%); }
-
-.container {
-  max-width: 1280px;
-  width: 100%;
-  margin: 0 auto; }
+@font-face {
+  font-family: 'Banny';
+  font-style: normal;
+  font-weight: normal;
+  src: local("Banny Round"), url("../fonts/Banny-Round.woff") format("woff"); }
 
 .btn {
   border-radius: 5px;
@@ -371,6 +353,27 @@ textarea {
 .btn:hover {
   background-color: #ffd500;
   transition: 0.2s; }
+
+.section__wrapper figure::after {
+  content: '';
+  position: absolute;
+  border: 20px solid #E8C300;
+  border-radius: 5px;
+  box-shadow: 0px 0px 100px rgba(65, 10, 10, 0.5);
+  display: block; }
+
+.team::before,
+.team::after,
+.specialties::before,
+.specialties::after,
+.events::before,
+.events::after, .team .container::before, .specialties .container::before, .events .container::before {
+  content: '';
+  display: block;
+  width: 1px;
+  background: rgba(255, 255, 255, 0.2);
+  position: absolute;
+  transform: translate(-50%); }
 
 .title_white {
   color: #FFFFFF; }
@@ -397,17 +400,26 @@ textarea {
 .team::before,
 .team::after,
 .specialties::before,
-.specialties::after {
+.specialties::after,
+.events::before,
+.events::after {
   height: 100%;
   top: 0; }
 
 .team::before,
-.specialties::before {
+.specialties::before,
+.events::before {
   left: 295px; }
 
 .team::after,
-.specialties::after {
+.specialties::after,
+.events::after {
   right: 295px; }
+
+.container {
+  max-width: 1280px;
+  width: 100%;
+  margin: 0 auto; }
 
 /* Header */
 .header {
@@ -640,7 +652,7 @@ textarea {
     .book .section__wrapper .section__text-wrapper .section__btn {
       width: 100%; }
   .book .section__wrapper figure {
-    margin-left: 70px; }
+    margin-left: 55px; }
 
 .book .work-time {
   text-align: center;
@@ -738,3 +750,57 @@ textarea {
             .kitchen-menu .section__wrapper .section__text-wrapper .kitchen-menu__list-wrapper .kitchen-menu__list .kitchen-menu__item .item__text {
               font: 12px "Open Sans", sans-serif;
               color: rgba(51, 51, 51, 0.5); }
+
+/* Private Events */
+.events {
+  background-image: url(../img/specialties-bg.png);
+  background-size: cover;
+  position: relative; }
+  .events .container::before {
+    height: 100%;
+    left: 50%; }
+  .events .sub-title {
+    text-align: center;
+    padding: 40px 0; }
+  .events .section__wrapper {
+    margin-top: 0;
+    justify-content: center; }
+    .events .section__wrapper figure {
+      cursor: pointer; }
+      .events .section__wrapper figure span {
+        font: 24px "Banny", sans-serif;
+        line-height: 12px;
+        text-transform: uppercase;
+        color: #FFFFFF;
+        position: absolute; }
+    .events .section__wrapper figure::before {
+      content: '';
+      display: block;
+      height: 100%;
+      width: 80px;
+      position: absolute;
+      background-color: black; }
+    .events .section__wrapper figure:first-of-type {
+      margin-left: 0; }
+      .events .section__wrapper figure:first-of-type span {
+        top: 80px;
+        right: -20px;
+        transform: rotate(90deg); }
+    .events .section__wrapper figure:first-of-type::before {
+      right: 0; }
+    .events .section__wrapper figure:first-of-type::after {
+      left: 0; }
+    .events .section__wrapper figure:last-of-type span {
+      transform: rotate(-90deg);
+      left: -80px;
+      bottom: 135px; }
+  .events .work-time {
+    text-align: center;
+    display: block;
+    padding: 45px 0;
+    color: rgba(255, 255, 255, 0.5); }
+
+.gallery {
+  display: flex; }
+  .gallery img {
+    width: 25%; }

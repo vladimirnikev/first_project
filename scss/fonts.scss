@@ -1,0 +1,14 @@
+@font-face {
+    font-family: 'Banny';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Banny Round'), url('../fonts/Banny-Round.woff') format('woff');
+}
+
+// Шрифт1
+$font-stack1: 'Banny',
+sans-serif;
+
+// Шрифт2
+$font-stack2: 'Open Sans',
+sans-serif;

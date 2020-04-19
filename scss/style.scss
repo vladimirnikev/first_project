@@ -1,11 +1,7 @@
 @import 'css/reset';
+@import 'scss/fonts.scss';
+@import 'scss/buttons.scss';
 
-@font-face {
-    font-family: 'Banny';
-    font-style: normal;
-    font-weight: normal;
-    src: local('Banny Round'), url('../fonts/Banny-Round.woff') format('woff');
-}
 
 // Стили для img::after
 %golden-square {
@@ -27,45 +23,8 @@
     transform: translate(-50%);
 }
 
-// Шрифт1
-$font-stack1: 'Banny',
-sans-serif;
-
-// Шрифт2
-$font-stack2: 'Open Sans',
-sans-serif;
-
 // Цвет малого текста
 $color-sub-text: rgba(255, 255, 255, 0.5);
-
-.container {
-    max-width: 1280px;
-    width: 100%;
-    margin: 0 auto;
-}
-
-// Кнопки
-.btn {
-    border-radius: 5px;
-    width: 200px;
-    border: none;
-    background-color: #E8C300;
-
-    a {
-        display: block;
-        padding: 20px;
-        text-decoration: none;
-        font: bold 12px $font-stack2;
-        line-height: 12px;
-        color: #FFFFFF;
-        text-transform: uppercase;
-    }
-}
-
-.btn:hover {
-    background-color: #ffd500;
-    transition: 0.2s;
-}
 
 // Повторяющийся текст
 .title_white {
@@ -99,22 +58,32 @@ $color-sub-text: rgba(255, 255, 255, 0.5);
 .team::before,
 .team::after,
 .specialties::before,
-.specialties::after {
+.specialties::after,
+.events::before,
+.events::after {
     @extend %lines;
     height: 100%;
     top: 0;
 }
 
 .team::before,
-.specialties::before {
+.specialties::before,
+.events::before {
     left: 295px;
 }
 
 .team::after,
-.specialties::after {
+.specialties::after,
+.events::after {
     right: 295px;
 }
 
+
+.container {
+    max-width: 1280px;
+    width: 100%;
+    margin: 0 auto;
+}
 
 /* Header */
 
@@ -456,7 +425,7 @@ $color-sub-text: rgba(255, 255, 255, 0.5);
         }
 
         figure {
-            margin-left: 70px;
+            margin-left: 55px;
         }
     }
 
@@ -610,5 +579,95 @@ $color-sub-text: rgba(255, 255, 255, 0.5);
                 }
             }
         }
+    }
+}
+
+/* Private Events */
+
+.events {
+    background-image: url(../img/specialties-bg.png);
+    background-size: cover;
+    position: relative;
+
+    .container::before {
+        @extend %lines;
+        height: 100%;
+        left: 50%;
+    }
+
+    .sub-title {
+        text-align: center;
+        padding: 40px 0;
+    }
+
+    .section__wrapper {
+        margin-top: 0;
+        // display: flex;
+        justify-content: center;
+
+        figure {
+            cursor: pointer;
+
+            span {
+                font: 24px $font-stack1;
+                line-height: 12px;
+                text-transform: uppercase;
+                color: #FFFFFF;
+                position: absolute;
+            }
+
+        }
+
+        figure::before {
+            content: '';
+            display: block;
+            height: 100%;
+            width: 80px;
+            position: absolute;
+            background-color: black;
+        }
+
+        figure:first-of-type {
+            margin-left: 0;
+
+            span {
+                top: 80px;
+                right: -20px;
+                transform: rotate(90deg);
+            }
+        }
+
+        figure:first-of-type::before {
+            right: 0;
+        }
+
+        figure:first-of-type::after {
+            left: 0;
+        }
+
+        figure:last-of-type {
+            span {
+                transform: rotate(-90deg);
+                left: -80px;
+                bottom: 135px;
+
+            }
+        }
+    }
+
+    .work-time {
+        text-align: center;
+        display: block;
+        padding: 45px 0;
+        color: rgba(255, 255, 255, 0.5);
+    }
+
+}
+
+.gallery {
+    display: flex;
+
+    img {
+        width: 25%;
     }
 }
