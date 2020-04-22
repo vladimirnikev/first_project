@@ -8,15 +8,13 @@
   border-radius: 5px;
   width: 200px;
   border: none;
-  background-color: #E8C300; }
-  .btn a {
-    display: block;
-    padding: 20px;
-    text-decoration: none;
-    font: bold 12px "Open Sans", sans-serif;
-    line-height: 12px;
-    color: #FFFFFF;
-    text-transform: uppercase; }
+  background-color: #E8C300;
+  display: block;
+  padding: 20px;
+  font: bold 12px "Open Sans", sans-serif;
+  line-height: 12px;
+  color: #FFFFFF;
+  text-transform: uppercase; }
 
 .btn:hover {
   background-color: #ffd500;
