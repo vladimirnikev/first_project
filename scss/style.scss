@@ -3,6 +3,7 @@
 @import 'scss/buttons.scss';
 
 
+
 // Стили для img::after
 %golden-square {
     content: '';
@@ -68,6 +69,8 @@ input {
 }
 
 // Линии
+.header__wrapper::before,
+.header__wrapper::after,
 .team::before,
 .team::after,
 .specialties::before,
@@ -79,19 +82,28 @@ input {
     top: 0;
 }
 
+.header__wrapper::before,
 .team::before,
 .specialties::before,
 .events::before {
-    left: 295px;
+    left: 15%;
 }
 
+.header__wrapper::after,
 .team::after,
 .specialties::after,
 .events::after {
-    right: 295px;
+    right: 15%;
+}
+
+.header__wrapper::before,
+.header__wrapper::after {
+    top: 99px;
+    height: 667px;
 }
 
 
+// Контейнер
 .container {
     max-width: 1280px;
     width: 100%;
@@ -112,7 +124,6 @@ input {
 
         ul {
             display: flex;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 
             a {
                 display: inline-block;
@@ -124,6 +135,7 @@ input {
                 color: #ffffff;
                 width: 133px;
                 text-align: center;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.2);
             }
 
             a:hover {
@@ -131,20 +143,19 @@ input {
                 transition: 0.5s;
             }
         }
+
+        .logo {
+            margin-top: 25px;
+        }
     }
 
-    .logo {
-        position: absolute;
-        top: 25px;
-        left: 50%;
-        transform: translate(-50%);
-    }
 
     .header__wrapper {
         display: flex;
         align-items: center;
         width: 100%;
         justify-content: space-between;
+        margin-top: -76px;
 
         .work-time_wrapper {
 
@@ -156,14 +167,10 @@ input {
             }
         }
 
-
-
         .header__content {
             display: flex;
             flex-direction: column;
             align-items: center;
-            border-left: 1px solid rgba(255, 255, 255, 0.2);
-            border-right: 1px solid rgba(255, 255, 255, 0.2);
             margin-left: -95px;
             padding: 225px 40px 83px;
             position: relative;
@@ -239,18 +246,18 @@ input {
         .header__content::after {
             content: '';
             display: block;
-            height: 440px;
+            height: 424px;
             width: 1px;
             background-color: rgba(255, 255, 255, 0.2);
             position: absolute;
-            top: 87px;
+            top: 100px;
             left: 50%;
             transform: translate(-50%);
         }
 
         .header__content::after {
-            height: 82px;
-            top: 587px;
+            height: 83px;
+            top: 584px;
         }
 
         .header__link-wrapper {
@@ -724,6 +731,18 @@ input {
 
                 .input_message {
                     grid-column: 1 / 5;
+
+                    // margin-top: 10px;
+                    background: #E5E5E5;
+                    border-radius: 5px;
+                    // width: 277px;
+                    padding: 20px 0;
+                    border: none;
+                    font: 14px $font-stack2;
+                    line-height: 19px;
+                    color: rgba(51, 51, 51, 0.5);
+                    text-indent: 20px;
+                    resize: none;
                 }
 
                 address {
@@ -761,6 +780,10 @@ input {
     }
 }
 
+.map_img {
+    width: 100%;
+}
+
 /* Footer */
 
 .footer {
@@ -773,3 +796,5 @@ input {
         text-align: center;
     }
 }
+
+@import 'scss/media.scss';

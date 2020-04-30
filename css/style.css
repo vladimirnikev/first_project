@@ -360,6 +360,8 @@ textarea {
   box-shadow: 0px 0px 100px rgba(65, 10, 10, 0.5);
   display: block; }
 
+.header__wrapper::before,
+.header__wrapper::after,
 .team::before,
 .team::after,
 .specialties::before,
@@ -407,6 +409,8 @@ input {
   color: rgba(51, 51, 51, 0.5);
   text-indent: 20px; }
 
+.header__wrapper::before,
+.header__wrapper::after,
 .team::before,
 .team::after,
 .specialties::before,
@@ -416,15 +420,22 @@ input {
   height: 100%;
   top: 0; }
 
+.header__wrapper::before,
 .team::before,
 .specialties::before,
 .events::before {
-  left: 295px; }
+  left: 15%; }
 
+.header__wrapper::after,
 .team::after,
 .specialties::after,
 .events::after {
-  right: 295px; }
+  right: 15%; }
+
+.header__wrapper::before,
+.header__wrapper::after {
+  top: 99px;
+  height: 667px; }
 
 .container {
   max-width: 1280px;
@@ -441,8 +452,7 @@ input {
     width: 100%;
     position: relative; }
     .header .nav ul {
-      display: flex;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.2); }
+      display: flex; }
       .header .nav ul a {
         display: inline-block;
         padding: 40px 0;
@@ -452,20 +462,19 @@ input {
         text-transform: uppercase;
         color: #ffffff;
         width: 133px;
-        text-align: center; }
+        text-align: center;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2); }
       .header .nav ul a:hover {
         background: #E8C300;
         transition: 0.5s; }
-  .header .logo {
-    position: absolute;
-    top: 25px;
-    left: 50%;
-    transform: translate(-50%); }
+    .header .nav .logo {
+      margin-top: 25px; }
   .header .header__wrapper {
     display: flex;
     align-items: center;
     width: 100%;
-    justify-content: space-between; }
+    justify-content: space-between;
+    margin-top: -76px; }
     .header .header__wrapper .work-time_wrapper .work-time {
       color: #ffffff;
       transform: rotate(-90deg);
@@ -475,8 +484,6 @@ input {
       display: flex;
       flex-direction: column;
       align-items: center;
-      border-left: 1px solid rgba(255, 255, 255, 0.2);
-      border-right: 1px solid rgba(255, 255, 255, 0.2);
       margin-left: -95px;
       padding: 225px 40px 83px;
       position: relative; }
@@ -530,16 +537,16 @@ input {
     .header .header__wrapper .header__content::after {
       content: '';
       display: block;
-      height: 440px;
+      height: 424px;
       width: 1px;
       background-color: rgba(255, 255, 255, 0.2);
       position: absolute;
-      top: 87px;
+      top: 100px;
       left: 50%;
       transform: translate(-50%); }
     .header .header__wrapper .header__content::after {
-      height: 82px;
-      top: 587px; }
+      height: 83px;
+      top: 584px; }
     .header .header__wrapper .header__link-wrapper {
       border-radius: 50%;
       border: 1px solid rgba(255, 255, 255, 0.2);
@@ -829,7 +836,16 @@ input {
         .contact .section__wrapper .section__text-wrapper .section__form-message .input_phone {
           grid-column-start: 4; }
         .contact .section__wrapper .section__text-wrapper .section__form-message .input_message {
-          grid-column: 1 / 5; }
+          grid-column: 1 / 5;
+          background: #E5E5E5;
+          border-radius: 5px;
+          padding: 20px 0;
+          border: none;
+          font: 14px "Open Sans", sans-serif;
+          line-height: 19px;
+          color: rgba(51, 51, 51, 0.5);
+          text-indent: 20px;
+          resize: none; }
         .contact .section__wrapper .section__text-wrapper .section__form-message address {
           grid-column: 1 / 3;
           display: flex;
@@ -851,6 +867,9 @@ input {
           grid-column: 3 / 5;
           width: auto; }
 
+.map_img {
+  width: 100%; }
+
 /* Footer */
 .footer {
   background-color: rgba(0, 0, 0, 0.9); }
@@ -858,3 +877,134 @@ input {
     padding: 45px 0;
     color: rgba(255, 255, 255, 0.5);
     text-align: center; }
+
+@font-face {
+  font-family: 'Banny';
+  font-style: normal;
+  font-weight: normal;
+  src: local("Banny Round"), url("../fonts/Banny-Round.woff") format("woff"); }
+
+@media (max-width: 1279px) {
+  .container {
+    max-width: 98%; }
+  .header .nav ul a {
+    width: 90px; }
+  .header .nav .logo {
+    width: 150px;
+    height: 150px; }
+  .header .header__wrapper .header__content .header__name {
+    font: 75px "Banny", sans-serif; }
+  .header .header__wrapper .header__content::before {
+    height: 398px; }
+  .header .header__wrapper .header__content::after {
+    top: 558px; }
+  .header .header__link-wrapper a {
+    padding: 15px; }
+  .section__wrapper .section__img {
+    width: 335px;
+    height: 335px; }
+  .section__wrapper .section__text-wrapper {
+    max-width: 465px; }
+  .section__wrapper figure::after {
+    width: 175px;
+    height: 175px; }
+  .book .section__wrapper {
+    justify-content: flex-start; }
+    .book .section__wrapper .section__text-wrapper {
+      max-width: 100%;
+      margin-left: 20px; }
+    .book .section__wrapper input {
+      width: 228px; }
+    .book .section__wrapper figure {
+      align-self: flex-end;
+      margin-left: 60px; }
+  .kitchen-menu .section__wrapper .section__text-wrapper .kitchen-menu__list-wrapper .kitchen-menu__list .kitchen-menu__item {
+    display: block;
+    flex-wrap: nowrap; }
+    .kitchen-menu .section__wrapper .section__text-wrapper .kitchen-menu__list-wrapper .kitchen-menu__list .kitchen-menu__item .item-wrapper {
+      padding-bottom: 5px; }
+      .kitchen-menu .section__wrapper .section__text-wrapper .kitchen-menu__list-wrapper .kitchen-menu__list .kitchen-menu__item .item-wrapper .item__title {
+        font: 16px "Banny", sans-serif;
+        line-height: 16px; }
+    .kitchen-menu .section__wrapper .section__text-wrapper .kitchen-menu__list-wrapper .kitchen-menu__list .kitchen-menu__item .item__price {
+      font: 16px "Banny", sans-serif;
+      line-height: 16px;
+      margin-left: 0; }
+  .contact .section__wrapper .section__text-wrapper .section__form-message address {
+    flex-wrap: wrap; }
+    .contact .section__wrapper .section__text-wrapper .section__form-message address span:last-of-type {
+      margin-left: 0; } }
+
+@media (max-width: 999px) {
+  .header .nav {
+    justify-content: center; }
+    .header .nav ul {
+      display: none; }
+    .header .nav .logo {
+      margin-top: 10px; }
+  .header .header__wrapper {
+    margin-top: 0; }
+    .header .header__wrapper .header__content {
+      padding: 80px 20px 83px; }
+      .header .header__wrapper .header__content .header__name {
+        font: 65px "Banny", sans-serif; }
+      .header .header__wrapper .header__content .header__btn-wrapper {
+        padding-bottom: 20px; }
+    .header .header__wrapper .header__content::before {
+      top: 15px;
+      height: 264px; }
+    .header .header__wrapper .header__content::after {
+      top: 339px; }
+  .header .header__wrapper::before,
+  .header .header__wrapper::after {
+    top: 0;
+    height: 582px; }
+  .section__wrapper {
+    flex-direction: column; }
+    .section__wrapper .section__text-wrapper .section__title {
+      font: 30px "Banny", sans-serif; }
+    .section__wrapper .section__text-wrapper .content-text {
+      font: bold 16px "Open Sans", sans-serif; }
+    .section__wrapper .section__img {
+      width: 280px;
+      height: 280px; }
+    .section__wrapper figure::after {
+      width: 140px;
+      height: 140px;
+      top: 50%;
+      left: 100%; }
+  .about figure {
+    margin-left: 0;
+    order: 1; }
+  .about .section__text-wrapper {
+    order: 2;
+    margin-top: 40px; }
+  .team .section__wrapper figure {
+    padding-right: 0; }
+  .team .section__wrapper .section__text-wrapper {
+    padding-right: 0;
+    margin-top: 40px; }
+  .book .section__wrapper .section__text-wrapper {
+    margin-left: 0;
+    order: 2;
+    margin-top: 40px; }
+  .book .section__wrapper figure {
+    align-self: center;
+    margin-left: 0;
+    order: 1; }
+  .specialties .section__wrapper figure {
+    padding-right: 0; }
+  .specialties .section__wrapper .section__text-wrapper {
+    padding-right: 0;
+    margin-top: 40px; }
+  .kitchen-menu .section__wrapper .section__text-wrapper .kitchen-menu__categories li {
+    min-width: 100px; }
+  .kitchen-menu .section__wrapper .section__text-wrapper .kitchen-menu__list-wrapper {
+    justify-content: space-around; }
+    .kitchen-menu .section__wrapper .section__text-wrapper .kitchen-menu__list-wrapper .kitchen-menu__list .kitchen-menu__item {
+      max-width: 200px; }
+  .events .section__wrapper figure:last-of-type {
+    margin-left: 0;
+    margin-top: 40px; }
+  .contact .section__wrapper .section__text-wrapper .section__form-message address span:nth-child(even) {
+    margin-left: 0; } }
