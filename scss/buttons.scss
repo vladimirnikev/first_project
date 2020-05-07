@@ -1,0 +1,31 @@
+@import 'scss/fonts.scss';
+
+// Кнопки
+.btn {
+    border-radius: 5px;
+    width: 200px;
+    border: none;
+    background-color: #E8C300;
+    display: block;
+    padding: 20px;
+    // text-decoration: none;
+    font: bold 12px $font-stack2;
+    line-height: 12px;
+    color: #FFFFFF;
+    text-transform: uppercase;
+
+    a {
+        // display: block;
+        // padding: 20px;
+        // text-decoration: none;
+        // font: bold 12px $font-stack2;
+        // line-height: 12px;
+        // color: #FFFFFF;
+        // text-transform: uppercase;
+    }
+}
+
+.btn:hover {
+    background-color: #ffd500;
+    transition: 0.2s;
+}
