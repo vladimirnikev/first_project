@@ -731,12 +731,16 @@ input {
           text-transform: uppercase;
           min-width: 120px;
           border-right: 1px solid rgba(51, 51, 51, 0.2); }
+        .kitchen-menu .section__wrapper .section__text-wrapper .kitchen-menu__categories .tabs_menu-clicked {
+          background-color: #e4e4e4; }
         .kitchen-menu .section__wrapper .section__text-wrapper .kitchen-menu__categories li:last-of-type {
           border: none; }
         .kitchen-menu .section__wrapper .section__text-wrapper .kitchen-menu__categories li:hover {
           cursor: pointer;
           background-color: #e4e4e4;
           transition: 0.3s; }
+      .kitchen-menu .section__wrapper .section__text-wrapper .kitchen-menu__list-wrapper-hide {
+        display: none; }
       .kitchen-menu .section__wrapper .section__text-wrapper .kitchen-menu__list-wrapper {
         display: flex;
         justify-content: space-between;
