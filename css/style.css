@@ -352,6 +352,75 @@ textarea {
   background-color: #ffd500;
   transition: 0.2s; }
 
+@font-face {
+  font-family: 'Banny';
+  font-style: normal;
+  font-weight: normal;
+  src: local("Banny Round"), url("../fonts/Banny-Round.woff") format("woff"); }
+
+.modal__wrapper {
+  display: none;
+  position: fixed;
+  z-index: 20;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.8); }
+  .modal__wrapper .modal-book {
+    background-color: #fefefe;
+    margin: 4% auto;
+    padding: 50px 35px 35px 35px;
+    width: 25%;
+    border-radius: 10px;
+    border: 2px solid #E5E5E5;
+    display: flex;
+    flex-direction: column;
+    position: relative; }
+    .modal__wrapper .modal-book .close {
+      align-self: flex-end;
+      font: 28px bold;
+      line-height: 15px;
+      cursor: pointer;
+      position: absolute;
+      top: 20px;
+      right: 20px; }
+    .modal__wrapper .modal-book .section__title {
+      font: 36px "Banny", sans-serif;
+      color: #222;
+      line-height: 48px;
+      text-transform: uppercase;
+      position: relative;
+      padding-bottom: 30px;
+      text-align: center; }
+    .modal__wrapper .modal-book .section__title::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 5px;
+      background: #E8C300;
+      border-radius: 50px;
+      position: absolute;
+      left: 50%;
+      transform: translate(-50%); }
+    .modal__wrapper .modal-book .section__form-wrapper {
+      display: flex;
+      flex-direction: column;
+      padding-bottom: 10px;
+      justify-content: space-between; }
+      .modal__wrapper .modal-book .section__form-wrapper .section__form {
+        display: flex;
+        flex-direction: column; }
+        .modal__wrapper .modal-book .section__form-wrapper .section__form input {
+          width: auto; }
+        .modal__wrapper .modal-book .section__form-wrapper .section__form .input-select {
+          background-image: url(../img/input-down.svg);
+          background-repeat: no-repeat;
+          background-position: 90% 50%; }
+    .modal__wrapper .modal-book .section__btn {
+      width: 100%; }
+
 .section__wrapper figure::after {
   content: '';
   position: absolute;
@@ -470,8 +539,8 @@ input {
     .header .nav .logo {
       margin-top: 25px;
       transition-property: transform;
-      transform: rotate(920deg);
-      transition-duration: 20s; }
+      transition-duration: 30s;
+      transform: rotate(920deg); }
     .header .nav .logo:hover {
       transform: rotate(-920deg); }
   .header .header__wrapper {
@@ -954,7 +1023,9 @@ input {
   .contact .section__wrapper .section__text-wrapper .section__form-message address {
     flex-wrap: wrap; }
     .contact .section__wrapper .section__text-wrapper .section__form-message address span:last-of-type {
-      margin-left: 0; } }
+      margin-left: 0; }
+  .modal__wrapper .modal-book .section__title {
+    font: 32px "Banny", sans-serif; } }
 
 @media (max-width: 999px) {
   .header .nav {
@@ -1030,7 +1101,9 @@ input {
   .contact .section__wrapper .section__text-wrapper .section__form-message address {
     justify-content: space-between; }
     .contact .section__wrapper .section__text-wrapper .section__form-message address span:nth-child(even) {
-      margin-left: 0; } }
+      margin-left: 0; }
+  .modal__wrapper .modal-book {
+    width: 35%; } }
 
 @media (max-width: 767px) {
   .container {
@@ -1107,7 +1180,11 @@ input {
       grid-column: 1/5;
       grid-row: 5; }
     .contact .section__wrapper .section__text-wrapper .section__form-message span {
-      padding-bottom: 5px; } }
+      padding-bottom: 5px; }
+  .modal__wrapper .modal-book {
+    width: 50%; }
+    .modal__wrapper .modal-book .section__title {
+      font: 27px "Banny", sans-serif; } }
 
 @media (max-width: 489px) {
   .book .section__wrapper .section__text-wrapper .section__form-wrapper {
@@ -1117,4 +1194,9 @@ input {
   .kitchen-menu .section__wrapper .section__text-wrapper .kitchen-menu__categories li {
     min-width: 64px; }
   .kitchen-menu .section__wrapper .section__text-wrapper .kitchen-menu__list-wrapper {
-    display: block; } }
+    display: block; }
+  .modal__wrapper .modal-book {
+    width: 70%;
+    padding: 50px 25px 15px 25px; }
+    .modal__wrapper .modal-book .section__title {
+      font: 27px "Banny", sans-serif; } }

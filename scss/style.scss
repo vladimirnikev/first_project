@@ -1,6 +1,7 @@
 @import 'css/reset';
 @import 'scss/fonts.scss';
 @import 'scss/buttons.scss';
+@import 'scss/modal-book.scss';
 
 
 
@@ -147,8 +148,8 @@ input {
         .logo {
             margin-top: 25px;
             transition-property: transform;
+            transition-duration: 30s;
             transform: rotate(920deg);
-            transition-duration: 20s;
         }
 
         .logo:hover {
