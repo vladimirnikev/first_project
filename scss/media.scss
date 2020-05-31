@@ -159,6 +159,15 @@
             }
         }
     }
+
+    // Modal
+    .modal__wrapper {
+        .modal-book {
+            .section__title {
+                font: 32px $font-stack1;
+            }
+        }
+    }
 }
 
 @media (max-width: 999px) {
@@ -346,6 +355,12 @@
         }
     }
 
+    // Modal
+    .modal__wrapper {
+        .modal-book {
+            width: 35%;
+        }
+    }
 
 }
 
@@ -506,6 +521,17 @@
             }
         }
     }
+
+    // Modal
+    .modal__wrapper {
+        .modal-book {
+            width: 50%;
+
+            .section__title {
+                font: 27px $font-stack1;
+            }
+        }
+    }
 }
 
 
@@ -539,6 +565,18 @@
                 .kitchen-menu__list-wrapper {
                     display: block;
                 }
+            }
+        }
+    }
+
+    // Modal
+    .modal__wrapper {
+        .modal-book {
+            width: 70%;
+            padding: 50px 25px 15px 25px;
+
+            .section__title {
+                font: 27px $font-stack1;
             }
         }
     }

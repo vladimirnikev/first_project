@@ -66,7 +66,9 @@
   .contact .section__wrapper .section__text-wrapper .section__form-message address {
     flex-wrap: wrap; }
     .contact .section__wrapper .section__text-wrapper .section__form-message address span:last-of-type {
-      margin-left: 0; } }
+      margin-left: 0; }
+  .modal__wrapper .modal-book .section__title {
+    font: 32px "Banny", sans-serif; } }
 
 @media (max-width: 999px) {
   .header .nav {
@@ -142,7 +144,9 @@
   .contact .section__wrapper .section__text-wrapper .section__form-message address {
     justify-content: space-between; }
     .contact .section__wrapper .section__text-wrapper .section__form-message address span:nth-child(even) {
-      margin-left: 0; } }
+      margin-left: 0; }
+  .modal__wrapper .modal-book {
+    width: 35%; } }
 
 @media (max-width: 767px) {
   .container {
@@ -219,7 +223,11 @@
       grid-column: 1/5;
       grid-row: 5; }
     .contact .section__wrapper .section__text-wrapper .section__form-message span {
-      padding-bottom: 5px; } }
+      padding-bottom: 5px; }
+  .modal__wrapper .modal-book {
+    width: 50%; }
+    .modal__wrapper .modal-book .section__title {
+      font: 27px "Banny", sans-serif; } }
 
 @media (max-width: 489px) {
   .book .section__wrapper .section__text-wrapper .section__form-wrapper {
@@ -229,4 +237,9 @@
   .kitchen-menu .section__wrapper .section__text-wrapper .kitchen-menu__categories li {
     min-width: 64px; }
   .kitchen-menu .section__wrapper .section__text-wrapper .kitchen-menu__list-wrapper {
-    display: block; } }
+    display: block; }
+  .modal__wrapper .modal-book {
+    width: 70%;
+    padding: 50px 25px 15px 25px; }
+    .modal__wrapper .modal-book .section__title {
+      font: 27px "Banny", sans-serif; } }
