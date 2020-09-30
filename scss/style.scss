@@ -1,7 +1,9 @@
 @import 'css/reset';
 @import 'scss/fonts.scss';
+@import 'scss/burger.scss';
 @import 'scss/buttons.scss';
 @import 'scss/modal-book.scss';
+
 
 
 
@@ -111,6 +113,10 @@ input {
     margin: 0 auto;
 }
 
+.burger-menu {
+    display: none;
+}
+
 /* Header */
 
 .header {
@@ -145,17 +151,40 @@ input {
             }
         }
 
+        // .logo {
+        //     margin-top: 25px;
+        //     transition-property: transform;
+        //     transition-duration: 30s;
+        //     transform: rotate(920deg);
+        // }
+
+        // .logo:hover {
+        //     transform: rotate(-920deg);
+        // }
+    }
+
+    .logo-wrapper {
+        position: absolute;
+        left: 50%;
+        top: 20px;
+        transform: translate(-50%);
+        z-index: 9999;
+
         .logo {
-            margin-top: 25px;
-            transition-property: transform;
+            // transition-property: transform;
             transition-duration: 30s;
-            transform: rotate(920deg);
+            // transform-origin: center;
+            // transform: rotate(920deg);
         }
 
         .logo:hover {
             transform: rotate(-920deg);
+            transition-property: transform;
+            transition-duration: 30s;
+            // transition-duration: 30s;
         }
     }
+
 
 
     .header__wrapper {
@@ -163,7 +192,7 @@ input {
         align-items: center;
         width: 100%;
         justify-content: space-between;
-        margin-top: -76px;
+        // margin-top: -76px;
 
         .work-time_wrapper {
 
@@ -464,6 +493,7 @@ input {
         @extend %lines;
         height: 100%;
         left: 50%;
+        pointer-events: none;
     }
 
     .sub-title {

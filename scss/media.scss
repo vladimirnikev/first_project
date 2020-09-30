@@ -171,24 +171,116 @@
 }
 
 @media (max-width: 999px) {
+    .burger-menu {
+        display: block;
+    }
+
+    .burger-box {
+        position: fixed;
+        // width: 0;
+        height: 80px;
+        transform: translate(-100%);
+        top: 0;
+        left: 0;
+        transition: transform 0.2s 0.5s;
+        // на бэкграунд картинку
+        z-index: 9999;
+        width: 100%;
+        background: #040202;
+    }
+
+    .burger-box_active {
+        transform: translate(0);
+        transition: transform 0.2s;
+        // width: 100%;
+    }
+
+
 
     // Header
     .header {
+
+        // HERE REMAKE MENU
         .nav {
+            position: fixed;
+
+            // top: -80px;
+
+            top: -80px;
+            left: 0;
+            transform: translate(0);
+            transition: transform 0.5s ease-in 0s;
+
+            // widows: 100%;
+            // width: 0;
+            // transition: width 0.6s 0.5s, transform 0.5s 0s;
+            // overflow: hidden;
+            // left: 50%;
+
+
+
+            // transition: transform 0.5s 0s, top 0s 0.5s;
             justify-content: center;
 
+            background-color: gold;
+            z-index: 9998;
+
+            // display: none;
+            // opacity: 0;
+
             ul {
-                display: none;
-            }
-
-            .logo {
-                margin-top: 10px;
-
+                a {
+                    padding: 20px 0;
+                    // width: 90px;
+                }
             }
         }
 
+        .nav-active {
+            // display: flex;
+            // opacity: 1;
+            // top: 0px;
+
+            // Сделать анимацию, которая вначале скейлит меню вправо, а через нн-ое время вниз
+            // width: 100%;
+            transform: translate(0, 160px);
+            transition: transform 0.3s ease-out 0.2s;
+
+            // transform: translate(0, 80px);
+            // transition: transform 0.5s;
+            // transition: width 0.6s ease 0s, translate 0.5s ease 0.6s;
+
+            // transform: translate(-50%, 80px);
+            // transition: transform 0.5s 0s, top 0s 0.5s;
+        }
+
+        .logo-wrapper {
+            transition: 0.8s 0s;
+
+            .logo {
+                transition: 0.8s 0s;
+            }
+        }
+
+
+        .logo-wrapper_active {
+            transform: translate(0);
+            position: fixed;
+            transition: 0.5s;
+            z-index: 9999;
+            left: -30px;
+            top: -35px;
+
+            .logo_active {
+                transform: scale(0.5) rotate(-180deg);
+                transition: transform 0.5s;
+            }
+        }
+
+
+
         .header__wrapper {
-            margin-top: 0;
+            padding-top: 160px;
 
             .header__content {
                 padding: 80px 20px 83px;
@@ -370,6 +462,14 @@
     }
 
     .header {
+        .nav {
+            ul {
+                a {
+                    width: 75px;
+                }
+            }
+        }
+
         .header__wrapper {
             flex-direction: column;
 
@@ -534,49 +634,85 @@
     }
 }
 
+@media (max-width: 599px) {
+    .header {
+        .nav {
+            ul {
+                a {
+                    width: 75px;
+                }
+            }
+        }
+    }
 
+    @media (max-width:489px) {
 
+        // Header
+        .header {
+            .nav {
+                flex-direction: column;
+                justify-content: space-evenly;
+                top: -472px;
+                transition: transform 0.2s ease-in 0s;
 
-@media (max-width:489px) {
-    .book {
-        .section__wrapper {
-            .section__text-wrapper {
-                .section__form-wrapper {
+                ul {
                     flex-direction: column;
 
-                    .section__form:last-of-type {
-                        margin-left: 0;
+                    a {
+                        display: block;
+                        margin: auto;
+                        width: 130px;
+                        font-size: 23px;
+                    }
+                }
+            }
+
+            .nav-active {
+                transform: translate(0, 552px);
+            }
+        }
+
+        // Book
+        .book {
+            .section__wrapper {
+                .section__text-wrapper {
+                    .section__form-wrapper {
+                        flex-direction: column;
+
+                        .section__form:last-of-type {
+                            margin-left: 0;
+                        }
                     }
                 }
             }
         }
-    }
 
-    // Kitchen
-    .kitchen-menu {
-        .section__wrapper {
-            .section__text-wrapper {
-                .kitchen-menu__categories {
-                    li {
-                        min-width: 64px;
+        // Kitchen
+        .kitchen-menu {
+            .section__wrapper {
+                .section__text-wrapper {
+                    .kitchen-menu__categories {
+                        li {
+                            min-width: 64px;
+                        }
                     }
-                }
 
-                .kitchen-menu__list-wrapper {
-                    display: block;
+                    .kitchen-menu__list-wrapper {
+                        display: block;
+                    }
                 }
             }
         }
-    }
 
-    // Modal
-    .modal__wrapper {
-        .modal-book {
-            width: 70%;
-            padding: 50px 25px 15px 25px;
+        // Modal
+        .modal__wrapper {
+            .modal-book {
+                width: 70%;
+                padding: 50px 25px 15px 25px;
 
-            .section__title {
-                font: 27px $font-stack1;
+                .section__title {
+                    font: 27px $font-stack1;
+                }
             }
         }
     }
