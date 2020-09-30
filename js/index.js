@@ -56,3 +56,55 @@ window.onclick = function (event) {
         modal.style.display = "none";
     }
 }
+
+// Burger
+let burger = document.querySelector('.burger-menu');
+let burgerList = document.querySelector('.nav');
+let logo = document.querySelector('.logo');
+let burgerBox = document.querySelector('.burger-box');
+
+
+burger.addEventListener('click', () => {
+    let topScroll = window.pageYOffset;
+    if (burger.classList.contains('is-active')) {
+        if (topScroll > 20) {
+            burger.classList.remove('is-active');
+            burgerList.classList.remove('nav-active');
+        } else {
+            burger.classList.remove('is-active');
+            burgerList.classList.remove('nav-active');
+            logo.classList.remove('logo_active');
+            logo.parentNode.classList.remove('logo-wrapper_active');
+            burgerBox.classList.remove('burger-box_active');
+        }
+    } else {
+        if (topScroll > 20) {
+            burger.classList.add('is-active');
+            burgerList.classList.add('nav-active');
+        } else {
+            burger.classList.add('is-active');
+            burgerList.classList.add('nav-active');
+            logo.classList.add('logo_active');
+            logo.parentNode.classList.add('logo-wrapper_active');
+            burgerBox.classList.add('burger-box_active');
+        }
+    }
+})
+
+window.addEventListener('scroll', () => {
+    let topScroll = window.pageYOffset;
+    // Добавить проверку состояния кнопки
+    if (topScroll > 20) {
+        logo.classList.add('logo_active');
+        logo.parentNode.classList.add('logo-wrapper_active');
+        burgerBox.classList.add('burger-box_active');
+    } else {
+        logo.classList.remove('logo_active');
+        logo.parentNode.classList.remove('logo-wrapper_active');
+        burgerBox.classList.remove('burger-box_active');
+
+        if (burgerList.classList.contains('nav-active')) {
+            burgerList.classList.remove('nav-active');
+        }
+    }
+})

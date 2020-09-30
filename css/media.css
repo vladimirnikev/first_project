@@ -71,14 +71,51 @@
     font: 32px "Banny", sans-serif; } }
 
 @media (max-width: 999px) {
+  .burger-menu {
+    display: block; }
+  .burger-box {
+    position: fixed;
+    height: 80px;
+    transform: translate(-100%);
+    top: 0;
+    left: 0;
+    transition: transform 0.2s 0.5s;
+    z-index: 9999;
+    width: 100%;
+    background: #040202; }
+  .burger-box_active {
+    transform: translate(0);
+    transition: transform 0.2s; }
   .header .nav {
-    justify-content: center; }
-    .header .nav ul {
-      display: none; }
-    .header .nav .logo {
-      margin-top: 10px; }
+    position: fixed;
+    top: -80px;
+    left: 0;
+    transform: translate(0);
+    transition: transform 0.5s ease-in 0s;
+    justify-content: center;
+    background-color: gold;
+    z-index: 9998; }
+    .header .nav ul a {
+      padding: 20px 0; }
+  .header .nav-active {
+    transform: translate(0, 160px);
+    transition: transform 0.3s ease-out 0.2s; }
+  .header .logo-wrapper {
+    transition: 0.8s 0s; }
+    .header .logo-wrapper .logo {
+      transition: 0.8s 0s; }
+  .header .logo-wrapper_active {
+    transform: translate(0);
+    position: fixed;
+    transition: 0.5s;
+    z-index: 9999;
+    left: -30px;
+    top: -35px; }
+    .header .logo-wrapper_active .logo_active {
+      transform: scale(0.5) rotate(-180deg);
+      transition: transform 0.5s; }
   .header .header__wrapper {
-    margin-top: 0; }
+    padding-top: 160px; }
     .header .header__wrapper .header__content {
       padding: 80px 20px 83px; }
       .header .header__wrapper .header__content .header__name {
@@ -151,6 +188,8 @@
 @media (max-width: 767px) {
   .container {
     max-width: 95%; }
+  .header .nav ul a {
+    width: 75px; }
   .header .header__wrapper {
     flex-direction: column; }
     .header .header__wrapper .work-time_wrapper {
@@ -229,7 +268,25 @@
     .modal__wrapper .modal-book .section__title {
       font: 27px "Banny", sans-serif; } }
 
-@media (max-width: 489px) {
+@media (max-width: 599px) {
+  .header .nav ul a {
+    width: 75px; } }
+
+@media (max-width: 599px) and (max-width: 489px) {
+  .header .nav {
+    flex-direction: column;
+    justify-content: space-evenly;
+    top: -472px;
+    transition: transform 0.2s ease-in 0s; }
+    .header .nav ul {
+      flex-direction: column; }
+      .header .nav ul a {
+        display: block;
+        margin: auto;
+        width: 130px;
+        font-size: 23px; }
+  .header .nav-active {
+    transform: translate(0, 552px); }
   .book .section__wrapper .section__text-wrapper .section__form-wrapper {
     flex-direction: column; }
     .book .section__wrapper .section__text-wrapper .section__form-wrapper .section__form:last-of-type {
