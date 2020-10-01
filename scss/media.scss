@@ -171,6 +171,12 @@
 }
 
 @media (max-width: 999px) {
+    .anchor {
+        position: absolute;
+        left: 0;
+        top: -139px;
+    }
+
     .burger-menu {
         display: block;
     }
@@ -211,7 +217,7 @@
             transform: translate(0);
             transition: transform 0.5s ease-in 0s;
 
-            // widows: 100%;
+            width: 100%;
             // width: 0;
             // transition: width 0.6s 0.5s, transform 0.5s 0s;
             // overflow: hidden;
@@ -270,6 +276,7 @@
             z-index: 9999;
             left: -30px;
             top: -35px;
+            pointer-events: none;
 
             .logo_active {
                 transform: scale(0.5) rotate(-180deg);
@@ -639,7 +646,7 @@
         .nav {
             ul {
                 a {
-                    width: 75px;
+                    width: 60px;
                 }
             }
         }
@@ -669,6 +676,7 @@
 
             .nav-active {
                 transform: translate(0, 552px);
+                transition: transform 0.3s ease-out 0.2s;
             }
         }
 
