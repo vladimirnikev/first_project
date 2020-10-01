@@ -71,6 +71,10 @@
     font: 32px "Banny", sans-serif; } }
 
 @media (max-width: 999px) {
+  .anchor {
+    position: absolute;
+    left: 0;
+    top: -139px; }
   .burger-menu {
     display: block; }
   .burger-box {
@@ -92,6 +96,7 @@
     left: 0;
     transform: translate(0);
     transition: transform 0.5s ease-in 0s;
+    width: 100%;
     justify-content: center;
     background-color: gold;
     z-index: 9998; }
@@ -110,7 +115,8 @@
     transition: 0.5s;
     z-index: 9999;
     left: -30px;
-    top: -35px; }
+    top: -35px;
+    pointer-events: none; }
     .header .logo-wrapper_active .logo_active {
       transform: scale(0.5) rotate(-180deg);
       transition: transform 0.5s; }
@@ -270,7 +276,7 @@
 
 @media (max-width: 599px) {
   .header .nav ul a {
-    width: 75px; } }
+    width: 60px; } }
 
 @media (max-width: 599px) and (max-width: 489px) {
   .header .nav {
@@ -286,7 +292,8 @@
         width: 130px;
         font-size: 23px; }
   .header .nav-active {
-    transform: translate(0, 552px); }
+    transform: translate(0, 552px);
+    transition: transform 0.3s ease-out 0.2s; }
   .book .section__wrapper .section__text-wrapper .section__form-wrapper {
     flex-direction: column; }
     .book .section__wrapper .section__text-wrapper .section__form-wrapper .section__form:last-of-type {

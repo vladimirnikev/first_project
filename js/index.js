@@ -93,8 +93,8 @@ burger.addEventListener('click', () => {
 
 window.addEventListener('scroll', () => {
     let topScroll = window.pageYOffset;
-    // Добавить проверку состояния кнопки
-    if (topScroll > 20) {
+
+    if (topScroll >= 1) {
         logo.classList.add('logo_active');
         logo.parentNode.classList.add('logo-wrapper_active');
         burgerBox.classList.add('burger-box_active');
@@ -103,8 +103,9 @@ window.addEventListener('scroll', () => {
         logo.parentNode.classList.remove('logo-wrapper_active');
         burgerBox.classList.remove('burger-box_active');
 
-        if (burgerList.classList.contains('nav-active')) {
+        if (burger.classList.contains('is-active')) {
             burgerList.classList.remove('nav-active');
+            burger.classList.remove('is-active');
         }
     }
 })
